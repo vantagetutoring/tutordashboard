@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+        <title>Tutor Dashboard</title>
+      
+        <link rel="stylesheet" href="style.css">
+        <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+        <link rel="stylesheet" href="https://use.typekit.net/gtu7ugu.css">
+        <script src="https://kit.fontawesome.com/e8c8e8e543.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      </head>
+      
+<body>
+    <div id='login-screen'>
+        <div style='margin-top:100px;'>
+            <h2>Tutor Dashboard</h2>
+            <p>Welcome to the tutor dashboard! Login with your Google account.</p>
+            <button onclick='signIn()'>Log In with Google</button>
+        </div>
+    </div>
+    <nav id='navbar' style='display:none;'>
+        <div class='card'>
+            <div id='profile'>
+                <img id='pic' src='assets/user.png'>
+                <div id='displayName'>Display Name</div>
+                <button class='icon-btn' onclick="$('#profile-cog').toggle()"><i class='fa fa-ellipsis-v'></i></button>
+                <div class='options' id='profile-cog'>
+                    <button onclick='logout()'>Logout</button>
+                    <button onclick='$("#dev-card").toggle()'>Toggle Dev</button>
+                    <button>Help</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class='card'>
+            <div id='tabs'>
+                <button onclick='alert("hi")'><i class='fas fa-home'></i>Home</button>
+                <button><i class='fas fa-graduation-cap'></i>Students</button>
+                <button><i class='fas fa-book'></i>Resources</button>
+                <button><i class='fas fa-cog'></i>Profile</button>
+            </div>
+        </div>
+        <!--<div class='card'>
+            <div id='tabs'>
+                <button onclick='tab("#chat")'><i class='fa fa-comment'></i>Chat</button>
+            </div>
+        </div>-->
+    </nav>
+
+    <main>
+        <div class='page' id='main' style='display:none;'>
+            <div class='card' id='dev-card' style='display:none;'>
+                <h3>Developer Information</h3>
+                <p>Vantage Dashboard v0.3 beta</p>
+                <p>UID: <span id='uid'></span></p>
+            </div>
+            <div class='card' id='setup-card' style='display:none;'></div>
+            <div class='card' id='home-card' style='display:none;'>
+                <h2><span id='name'>Name</span> - Verified Tutor</h2>
+                <p id='bio'>Bio</p>
+                <div class='flex'>
+                    <div>
+                        <h3>Subjects</h3>
+                        <p id='subjects'>Math, Piano</p>
+                    </div>
+                    <div>
+                        <h3>Classes Taught</h3>
+                        <p id='classes-taught'>4</p>
+                    </div>
+                    <div>
+                        <h3>Payments</h3>
+                        <p id='subjects'>0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='page' id='chat' style='display:none;'>
+            <div class='card'>
+                <h2>💬 Chatlog</h2>
+
+                <div id='message-con'>
+                    <div class='other-message'>
+                        <img src='assets/user.png'></img>
+                        <p>Hello User text what's up?</p>
+                        <time>5:36 pm</time>
+                    </div>
+                    <div class='user-message'>
+                        <time>5:36 pm</time>
+                        <p>Oh, hey i have like a really big and long question for you and I</p>
+                        <img src='assets/user.png'></img>
+                    </div>
+                </div>
+
+                <div id='message-input' contenteditable="true" data-ph="Type something..."></div>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+    </main>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+<script src="auth.js"></script>
+<script src="setup.js"></script>
+<script src="chat.js"></script>
+<script src="script.js"></script>
+
+
+</html>
