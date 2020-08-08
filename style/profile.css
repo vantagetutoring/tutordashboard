@@ -1,0 +1,54 @@
+.profile-edit div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:10px;
+}
+
+.profile-edit p {
+    width:200px;
+    margin:auto 0px;
+}
+
+input {
+    width:300px;
+    font-size:12pt;
+    font-family:sofia-pro, sans-serif;
+    padding: 10px 20px;
+    height:20px;
+}
+
+.profile-edit textarea {
+    width:95%;
+    font-size:12pt;
+    font-family:sofia-pro, sans-serif;
+    padding: 20px 20px;
+    height:20px;
+    resize: none;
+    height:300px;
+    overflow-y:scroll;
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+.profile-display img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:100px;
+    margin: 25px 0px;
+    margin-right:50px;
+}
+
+.profile-edit img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:100px;
+    margin: 25px 0px;
+    margin-right:50px;
+}
+
+.profile-display .info-con{
+    display:flex;
+}

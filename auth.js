@@ -1,5 +1,4 @@
 
-  var userData;
   var maintainence = false;
 
   // Firebase configuration FIRST
@@ -79,7 +78,6 @@ function getCheckUser(uid, displayName, email, photoURL){     // check if user h
           renderState(uid);
         } else {
           usersRef.set({
-            setup: false,
             verified: false,
             general: {
               name: displayName,
@@ -100,31 +98,17 @@ function getCheckUser(uid, displayName, email, photoURL){     // check if user h
 }
 
 
+
 function renderState(uid){
-  db.collection('users').doc(uid).get().then(docSnapshot=>{
-    var setup = docSnapshot.data().setup;
-    var verified = docSnapshot.data().verified;
-    var picture = docSnapshot.data().picture;
-    if (setup){
-      if (!verified){
-        $('#setup-card').show();
-        setupDone();
-        $('#tabs').css('pointer-events','none')
-      }
-      if (picture == '') {
-        var p = $('#setup-card').clone().appendTo('#main');
-        Setup.part2(p);
-      }
-      if (verified){
-        $('#home-card').show();
-        $('#name').text(docSnapshot.data().general.name);
-        $('#bio').text(docSnapshot.data().profile);
-      }
+  Profile.render();
+  db.collection('users').doc(uid).get().then(doc=>{
+    var verified = doc.data().verified;
+    $('#tabs').css('pointer-events','none')
+    if (verified){
+        createNotifyCard('#main',"✅ You're Verified!",'Your profile has been approved and you are now on the <a target="_blank" href="http://vantagetutoring.github.io/tutors">website</a>! We will contact you through email for more information regarding tutoring. Welcome to the team!')
     }
     else {
-        $('#setup-card').show();
-        Setup.part0();
-        $('#tabs').css('pointer-events','none')
+        createNotifyCard('#main','📦 Setup',"Welcome to the dashboard! Please setup a full profile for review to be verified. Once verified, you can begin tutoring and your profile will also be displayed on the website. <br><br> For the bio, you don't need to write your name, grade, etc but please list your hobbies, achievements and any experiences you had working as a tutor (if applicable). You can also take a look at <a href='https://vantagetutoring.github.io/tutors' target='_blank'> my bio for reference</a>. <br><br>We also need your photo, which can be casual, but must contain your face and upper body, without sunglasses or masks!")
     }
   })
     
@@ -142,7 +126,7 @@ function renderState(uid){
 
 
 
-
+/*
 // random stuff
 
 function insertTextAtCursor(text) {
@@ -168,4 +152,4 @@ document.querySelector("#message-input").addEventListener("paste", function(e) {
     var text = window.clipboardData.getData("Text");
     insertTextAtCursor(text);
   }
-});
+});*/

@@ -1,0 +1,124 @@
+.card {
+    background-color:rgb(243, 243, 243);
+    padding:20px 30px;
+    border-radius: 10px;
+    margin-bottom:20px;
+}
+
+.options {
+    position:absolute;
+    background-color:white;
+    border: 2px solid rgb(214, 214, 214);
+    border-radius:10px;
+    padding: 10px 10px;
+    width:150px;
+    display:none;
+}
+
+.options button{
+    padding:10px 20px;
+    color:#2c373f;
+    width:150px;
+    background-color:white;
+}
+
+.options button:hover {
+    background-color:rgba(0, 0, 0, 0.068)
+}
+
+button{
+    border-radius:10px;
+    background-color:var(--main);
+    color:white;
+    padding:5px 20px;
+    border:none;
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:13pt;
+    outline:none;
+    cursor:pointer;
+}
+
+
+#profile-cog{
+    top:150px;
+    left:150px;
+}
+
+
+
+.flex {
+    display:flex;
+    justify-content:space-between;
+}
+
+#navbar {
+    display:none;
+    background-color:white;
+    width:300px;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    padding:50px 30px;
+    border-right:1.5px solid rgb(243, 243, 243)
+
+}
+
+#navbar #pic {
+    width:60px;
+    height:60px;
+    object-fit: cover;
+    border-radius:10px;
+}
+
+#navbar #displayName {
+    text-align: center;
+    font-size:14pt;
+    margin:0px;
+}
+
+#profile {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-btn {
+    padding:5px;
+    font-size:13pt;
+    border:none;
+    width:40px;
+    height:40px;
+    color:rgba(0, 0, 0, 0.253);
+    background:none;
+    cursor:pointer;
+    outline:none;
+}
+
+.icon-btn:hover {
+    background-color:rgba(0, 0, 0, 0.068);
+}
+
+#tabs {
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+
+}
+
+#tabs button{
+    margin:0px auto;
+    width:250px;
+    text-align:left;
+    padding:8px 20px;
+    margin-bottom:10px;
+    background-color:rgba(255, 255, 255, 0);
+    color:rgba(0, 0, 0, 0.425)
+}
+#tabs button i{
+    margin-right:20px;
+}
+#tabs button:hover{
+    color:rgba(0, 0, 0, 0.603)
+}
